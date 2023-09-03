@@ -41,6 +41,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="matrix.h" />
+		<Unit filename="pick.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="pick.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

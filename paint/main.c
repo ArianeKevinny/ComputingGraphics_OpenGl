@@ -4,14 +4,17 @@
 #include <stdlib.h>
 #include <math.h>
 #include "matrix.h"
+#include "pick.h"
 
 #define TOTAL_OBJ 100
 #define TOTAL_P 100
 
+//Auxiliares
 int modoDesenho = -1;
 int totalobjetos = 0;
 int totalpontos = 0;
 
+// Criando as estrturas
 struct Ponto{
     float x;
     float y;
@@ -23,6 +26,7 @@ struct Ponto{
 
 struct Objeto{
 
+    int idObjeto;
     int tipoObjeto;
     int totalPontos;
     Ponto pontos[TOTAL_P];
@@ -42,18 +46,6 @@ que vai parar na tela do openGL, setando o menor e o maior valor de x e y
     glMatrixMode(GL_PROJECTION); //Matriz de projeção
     gluOrtho2D(0.0,400.0,0.0,300.0);
 
-}
-
-void desenha_pontos(){
-//Implementar
-}
-
-void desenha_retas(){
-//Implementar
-}
-
-void desenha_poligonos(){
-    //Imlementar
 }
 
 void display(void){
@@ -129,7 +121,10 @@ void Mouse(int button, int state, int x, int y){
     switch(state)
     {
     case GLUT_DOWN:
+        printf("\nx: %d", x);
+        printf("\ny: %d", y);
         if(modoDesenho == 0){
+            objetos[totalobjetos].idObjeto = totalobjetos+1;
             objetos[totalobjetos].pontos[totalpontos].bColor = 0.0;
             objetos[totalobjetos].pontos[totalpontos].gColor = 0.0;
             objetos[totalobjetos].pontos[totalpontos].rColor = 0.0;
@@ -142,6 +137,7 @@ void Mouse(int button, int state, int x, int y){
         }
         if(modoDesenho == 1){
             //Armazena Segmento de Reta
+            objetos[totalobjetos].idObjeto = totalobjetos;
             objetos[totalobjetos].pontos[totalpontos].bColor = 1.0;
             objetos[totalobjetos].pontos[totalpontos].gColor = 0.0;
             objetos[totalobjetos].pontos[totalpontos].rColor = 0.0;
@@ -153,6 +149,7 @@ void Mouse(int button, int state, int x, int y){
             break;
         }
         if(modoDesenho == 2){
+            objetos[totalobjetos].idObjeto = totalobjetos;
             //Armazena Segmento de Reta
             objetos[totalobjetos].pontos[totalpontos].bColor = 0.0;
             objetos[totalobjetos].pontos[totalpontos].gColor = 1.0;
@@ -194,6 +191,10 @@ void menuObjeto(int opcao){
         modoDesenho = 2;
         printf("  Poligono   "); //Poligono
         break;
+    case 3:
+        modoDesenho = -1;
+        printf("Selecionar Objeto");
+        break;
     }
 }
 /*
@@ -234,6 +235,7 @@ int main(int argc, char** argv){
     glutAddMenuEntry("Crie Pontos", 0);
     glutAddMenuEntry("Crie Retas", 1);
     glutAddMenuEntry("Crie Poligonos", 2);
+    glutAddMenuEntry("Selecione um objeto", 3);
     glutAttachMenu(GLUT_RIGHT_BUTTON);
 
     glutMouseFunc(Mouse);

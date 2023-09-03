@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1693606008 source:d:\computinggraphics_opengl\paint\main.c
+1693769061 source:d:\computinggraphics_opengl\paint\main.c
 	<windows.h>
 	<GL/glut.h>
 	<stdio.h>
@@ -7,7 +7,7 @@
 	<math.h>
 	"matrix.h"
 
-1693593976 d:\computinggraphics_opengl\paint\matrix.h
+1693769729 d:\computinggraphics_opengl\paint\matrix.h
 
 1693594001 source:d:\computinggraphics_opengl\paint\matrix.c
 	<stdio.h>

@@ -15,4 +15,4 @@ float retorna_novos_pontos(float **mt, float x, float y);
 
 void dealoca_matriz(float **m);
 
-#endif // MATRIX_H_INCLUDED
+#endif // __MATRIX_H_
