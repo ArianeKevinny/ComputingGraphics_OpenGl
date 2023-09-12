@@ -2,13 +2,12 @@
 #include <stdlib.h>
 #include <math.h>
 #include "matrix.h"
-#define N 3
+#define N 3.0
 
 float** criar_matriz(){
     int i;
     float **m = (float**)malloc(N * sizeof(float));
     if(m==NULL){
-        printf("Não alocou");
         return 0;
         // Não conseguiu alocar
     }
@@ -16,7 +15,6 @@ float** criar_matriz(){
     for (i=0; i<N; i++){
         m[i] = malloc(N*sizeof(float));
         if(m[i]==NULL){
-            printf("Não alocou");
             return 0;
         // Não conseguiu alocar
         }
@@ -24,10 +22,9 @@ float** criar_matriz(){
     return m;
 }
 
-void preenche_matriz_traslacao(float **m, float tx, float ty){
+float preenche_matriz_traslacao(float tx, float ty){
 
-    printf("Tentou");
-
+    float m[3][3];
     m[0][0] = 1.0;
     m[0][1] = 0.0;
     m[0][2] = tx;
@@ -36,16 +33,17 @@ void preenche_matriz_traslacao(float **m, float tx, float ty){
     m[1][1] = 1.0;
     m[1][2] = ty;
 
+
     m[2][0] = 0.0;
     m[2][1] = 0.0;
     m[2][2] = 1.0;
 
-    printf("Preencheu");
-
+    return m;
 }
 
-void preenche_matriz_rotacao(float **m, float teta){
+float preenche_matriz_rotacao(float teta){
 
+    float m[3][3];
     m[0][0] = cos(teta);
     m[0][1] = -sin(teta);
     m[0][2] = 0.0;
@@ -59,10 +57,13 @@ void preenche_matriz_rotacao(float **m, float teta){
     m[2][1] = 0.0;
     m[2][2] = 1.0;
 
+    return m;
+
 }
 
-void preenche_matriz_escala(float **m, float sx, float sy){
+float preenche_matriz_escala(float sx, float sy){
 
+    float m[3][3];
     m[0][0] = sx;
     m[0][1] = 0.0;
     m[0][2] = 0.0;
@@ -76,42 +77,57 @@ void preenche_matriz_escala(float **m, float sx, float sy){
     m[2][1] = 0.0;
     m[2][2] = 1.0;
 
+    return m;
 }
 
-void multiplica_matriz(float m1[3][3], float m2[3][3], float *mt[3][3]){
+float preenche_matriz_pontos(float x, float y){
+
+    float m[3][1];
+    m[0][0] = x;
+    m[1][0] = y;
+    m[2][0] = 1.0;
+
+    return m;
+}
+
+
+float gera_matriz_transformacao(float m1, float m2){
 
     int i,j,k;
+    float t[3][3] = {0,0,0,0,0,0,0,0,0};
 
-    for (i=0; i<3; i++){
-        for (j=0; j<3; j++){
-            for (k=0; k<3; k++){
-                *mt[i][j] = *mt[i][j] + (m1[i][k] * m2[k][j]);
-            }
-        }
-    }
-}
-
-void retorna_novos_pontos(float mt[3][3], float *point_x, float *point_y, float x, float y){
-
-    float mp[3][1] = {x, y, 1.0};
-    float out[3][1] = {0.0, 0.0, 0.0};
-
-    for (int i = 0; i < 3; i++){
-        for (int j = 0; j < 1; j++){
-            for (int k = 0; k < 3; k++){
-                out[i][j] = out[i][j] + (mt[i][k] * mp[k][j]);
-            }
-        }
-    }
-    *point_x = out[0][0];
-    *point_y = out[1][0];
-
-}
-
-void desaloca_matriz(float **m){
-    int i;
     for (i=0; i<N; i++){
-        free(m[i]);
+        for (j=0; j<N; i++){
+            for (k=0; k<N; k++){
+                t[i][j] = t[i][j] + m1[i][k] + m2[k][j]
+            }
+        }
     }
+
+    return t;
+}
+
+float retorn_novos_pontos(float mt, float mp){
+
+
+    int i,j,k;
+    float out[3][1] = {0,0,0};
+
+    for (i=0; i<N; i++){
+        for (j=0; j<1; i++){
+            for (k=0; k<N; k++){
+                t[i][j] = t[i][j] + m1[i][k] + m2[k][j]
+            }
+        }
+    }
+    float x = out[0][0];
+    float y = out[1][0];
+
+    return x,y;
+
+}
+
+void dealoca_matriz(float m){
+
     free(m);
 }

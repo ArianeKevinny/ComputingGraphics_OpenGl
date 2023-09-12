@@ -9,10 +9,10 @@ void preenche_matriz_rotacao(float **m, float teta);
 
 void preenche_matriz_escala(float **m, float sx, float sy);
 
-float** multiplica_matriz(float **m1, float **m2);
+void multiplica_matriz(float m1[3][3], float m2[3][3], float *mt[3][3]);
 
-float retorna_novos_pontos(float **mt, float x, float y);
+void retorna_novos_pontos(float mt[3][3], float *point_x, float *point_y, float x, float y);
 
-void dealoca_matriz(float **m);
+void desaloca_matriz(float **m);
 
 #endif // __MATRIX_H_
