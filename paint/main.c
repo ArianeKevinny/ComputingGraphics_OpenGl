@@ -235,10 +235,10 @@ void modificaElementos(Lista *lista){
 
     for(int i=0; i<=lista->tam; i++){
 
-        if(inicio->idObjeto == selected && tipo_modifica==1){
+        if(inicio->idObjeto == selected && tipo_modifica == 1){
             float m1[3][3] = {1.0,0.0,pos_x-inicio->x_meio,0.0,1.0,pos_y-inicio->y_meio,0.0,0.0,1.0};
-            for(int j=0; j<soma_x; j++){
-                retorna_novos_pontos(&m1, &inicio->pontos[j].x, &inicio->pontos[j].y,inicio->pontos[j].x, inicio->pontos[j].y);
+            for(int j=0; j<inicio->totalPontos; j++){
+                retorna_novos_pontos(&m1, &inicio->pontos[j].x, &inicio->pontos[j].y, inicio->pontos[j].x, inicio->pontos[j].y);
                 soma_x += inicio->pontos[j].x;
                 soma_y += inicio->pontos[j].y;
                 printf("AQUI");
@@ -249,7 +249,7 @@ void modificaElementos(Lista *lista){
             soma_x = 0;
             soma_y = 0;
         }
-        else if(inicio->idObjeto == selected && tipo_modifica==2){
+        else if(inicio->idObjeto == selected && tipo_modifica == 2){
             float m2[3][3] = {1.0,0.0,-inicio->x_meio,0.0,1.0,-inicio->y_meio,0.0,0.0,1.0};
             float m3[3][3] = {cos(teta),-sin(teta),0.0,sin(teta),cos(teta),0.0,0.0,0.0,1.0};
             float m4[3][3] = {1.0,0.0,inicio->x_meio,0.0,1.0,inicio->y_meio,0.0,0.0,1.0};
@@ -269,7 +269,7 @@ void modificaElementos(Lista *lista){
             soma_x = 0;
             soma_y = 0;
         }
-        else if(inicio->idObjeto == selected && tipo_modifica==3){
+        else if(inicio->idObjeto == selected && tipo_modifica == 3){
             float m5[3][3] = {1.0,0.0,-inicio->x_meio,0.0,1.0,-inicio->y_meio,0.0,0.0,1.0};
             float m6[3][3] = {pos_x,0.0,0.0,0.0,pos_y,0.0,0.0,0.0,1.0};
             float m7[3][3] = {1.0,0.0,inicio->x_meio,0.0,1.0,inicio->y_meio,0.0,0.0,1.0};
