@@ -2,40 +2,50 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="main.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="matrix.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="147" topLine="0" />
+			<Cursor1 position="314" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main.c" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3392" topLine="0" />
 		</Cursor>
 		<Folding>
-			<Collapse line="11" />
-			<Collapse line="21" />
-			<Collapse line="31" />
-			<Collapse line="38" />
-			<Collapse line="64" />
+			<Collapse line="156" />
+		</Folding>
+	</File>
+	<File name="objeto.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="490" topLine="5" />
+		</Cursor>
+	</File>
+	<File name="matrix.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2224" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="8" />
+			<Collapse line="28" />
+			<Collapse line="39" />
+			<Collapse line="53" />
+			<Collapse line="69" />
+			<Collapse line="86" />
+			<Collapse line="97" />
+		</Folding>
+	</File>
+	<File name="objeto.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5120" topLine="18" />
+		</Cursor>
+		<Folding>
+			<Collapse line="10" />
+			<Collapse line="23" />
+			<Collapse line="49" />
+			<Collapse line="77" />
 			<Collapse line="91" />
-			<Collapse line="101" />
-			<Collapse line="124" />
-			<Collapse line="181" />
-			<Collapse line="190" />
-			<Collapse line="231" />
-			<Collapse line="297" />
-			<Collapse line="312" />
+			<Collapse line="155" />
+			<Collapse line="316" />
 		</Folding>
-	</File>
-	<File name="matrix.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1629" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="6" />
-			<Collapse line="26" />
-			<Collapse line="46" />
-			<Collapse line="63" />
-		</Folding>
-	</File>
-	<File name="matrix.h" open="1" top="1" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="66" topLine="0" />
-		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

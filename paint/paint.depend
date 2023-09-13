@@ -1,25 +1,35 @@
 # depslib dependency file v1.0
-1694513124 source:d:\computinggraphics_opengl\paint\main.c
+1694560957 source:d:\computinggraphics_opengl\paint\matrix.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	"matrix.h"
+	"matrix.h"
+
+1694559320 d:\computinggraphics_opengl\paint\matrix.h
+
+1694565433 source:d:\computinggraphics_opengl\paint\main.c
+	<windows.h>
+	<GL/glut.h>
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	"estruturas.h"
+	"objeto.h"
+	"matrix.h"
+
+1694545653 d:\computinggraphics_opengl\paint\estruturas.h
+
+1694561401 d:\computinggraphics_opengl\paint\objeto.h
+	"estruturas.h"
+
+1694565742 source:d:\computinggraphics_opengl\paint\objeto.c
 	<windows.h>
 	<GL/glut.h>
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
 	"matrix.h"
-
-1694512064 d:\computinggraphics_opengl\paint\matrix.h
-
-1694512390 source:d:\computinggraphics_opengl\paint\matrix.c
-	<stdio.h>
-	<stdlib.h>
-	<math.h>
-	"matrix.h"
-
-1694469391 source:d:\computinggraphics_opengl\paint\pick.c
-	<stdio.h>
-	<stdlib.h>
-	<math.h>
 	"objeto.h"
-
-1694470306 d:\computinggraphics_opengl\paint\objeto.h
+	"estruturas.h"
 
