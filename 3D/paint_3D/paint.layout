@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<FileVersion major="1" minor="0" />
+	<ActiveTarget name="Debug" />
+	<File name="matrix.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="118" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="objeto.c" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="10256" topLine="82" />
+		</Cursor>
+		<Folding>
+			<Collapse line="46" />
+			<Collapse line="70" />
+			<Collapse line="80" />
+			<Collapse line="93" />
+			<Collapse line="154" />
+			<Collapse line="217" />
+			<Collapse line="225" />
+			<Collapse line="248" />
+			<Collapse line="305" />
+			<Collapse line="315" />
+		</Folding>
+	</File>
+	<File name="estruturas.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="430" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main.c" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="8437" topLine="121" />
+		</Cursor>
+		<Folding>
+			<Collapse line="34" />
+			<Collapse line="48" />
+			<Collapse line="156" />
+			<Collapse line="235" />
+		</Folding>
+	</File>
+	<File name="objeto.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="490" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="matrix.c" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1507" topLine="38" />
+		</Cursor>
+		<Folding>
+			<Collapse line="8" />
+			<Collapse line="28" />
+		</Folding>
+	</File>
+</CodeBlocks_layout_file>

@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1692161191 source:c:\users\ariane\desktop\bandeira\main.c
+	<windows.h>
+	<GL/glut.h>
+	<math.h>
+	<stdio.h>
+
+1692161410 source:d:\computinggraphics_opengl\bandeira\main.c
+	<windows.h>
+	<GL/glut.h>
+	<math.h>
+	<stdio.h>
+

@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1692153219 source:c:\users\ariane\desktop\tringulo\main.c
+	<windows.h>
+	<GL/glut.h>
+
