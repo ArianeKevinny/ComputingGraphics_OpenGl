@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1697407267 source:d:\computinggraphics_opengl\3d\final3d\main.c
+	<windows.h>
+	<stdio.h>
+	<GL/glut.h>
+	<GL/freeglut.h>
+
