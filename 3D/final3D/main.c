@@ -3,7 +3,7 @@
 #include <GL/glut.h>
 #include <GL/freeglut.h>
 
-int selected = 1;
+int selected = 0;
 
 struct Objeto{
     float x;
@@ -29,9 +29,9 @@ void lighting(){
     float global[4] = {0.9f,0.9f,0.9f,1.0f};
     float black[4] = {0.0f,0.0f,0.0f,0.0f};
     float white[4] = {1.0f,1.0f,1.0f,1.0f};
-    float red[4] = {1.0f,0.0f,0.0f,1.0f};
-    float position0[4] = {80.0f,180.0f,80.0f,1.0f};
-    float position1[4] = {0.0f,0.0f,150.0f,1.0f};
+    //float red[4] = {1.0f,0.0f,0.0f,1.0f};
+    float position0[4] = {40.0f,100.0f,40.0f,1.0f};
+    //float position1[4] = {0.0f,0.0f,150.0f,1.0f};
 
     glLightfv(GL_LIGHT0, GL_POSITION, position0);
     glLightfv(GL_LIGHT0, GL_AMBIENT, black);
@@ -55,10 +55,13 @@ int init(void){
     glClearColor(1.0f,1.0f,1.0f,1.0f); //RGB
     glEnable(GL_DEPTH_TEST);
 
+    //glEnable(GL_CULL_FACE);
+    //glCullFace(GL_BACK);
+
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
 
-    gluLookAt(80.0, 80.0, 90.0,
+    gluLookAt(40.0, 40.0, 40.0,
               0.0, 0.0, 0.0,
               0.0, 1.0, 0.0);
 
@@ -99,18 +102,6 @@ void desenhaCenario(){
         glVertex3f(0.0, 0.0, 0.0);
     glEnd();
 
-    glPointSize(10.0f);
-    glColor3f(0.0, 0.0, 0.0);
-    glBegin(GL_LINE_LOOP);
-        glVertex3f(0.0, 0.0, 0.0);
-        glVertex3f(0.0, 0.0, 150.0);
-        glVertex3f(0.0, 150.0, 150.0);
-        glVertex3f(0.0, 150.0, 0.0);
-        glVertex3f(150.0, 150.0, 0.0);
-        glVertex3f(150.0, 0.0, 0.0);
-        glVertex3f(0.0, 0.0, 0.0);
-    glEnd();
-
     // Chão
     materialColor(246.0, 228.0, 228.0, 0.0f, 0.1f);
     //glColor3f(213.0/255.0, 213.0/255.0, 202./255.0);
@@ -120,16 +111,6 @@ void desenhaCenario(){
         glVertex3f(0.0, 0.0, 0.0);
         glVertex3f(0.0, 0.0, 150.0);
     glEnd();
-
-    glPointSize(10.0f);
-    glColor3f(0.0, 0.0, 0.0);
-    glBegin(GL_LINE_LOOP);
-        glVertex3f(150.0, 0.0, 150.0);
-        glVertex3f(150.0, 0.0, 0.0);
-        glVertex3f(0.0, 0.0, 0.0);
-        glVertex3f(0.0, 0.0, 150.0);
-    glEnd();
-
 }
 
 void display(void){
@@ -171,7 +152,7 @@ void display(void){
 
     glFlush(); //Desenha o que eu não coloquei comando direto
 }
-/*
+
 void Teclado(unsigned char tecla, int x, int y){
 
     switch(tecla){
@@ -181,6 +162,9 @@ void Teclado(unsigned char tecla, int x, int y){
         case 50:
             selected = 2;
             break;
+        case 51:
+            selected = 3;
+            break;
         case 13:
             selected = 0;
             break;
@@ -188,7 +172,7 @@ void Teclado(unsigned char tecla, int x, int y){
     glutPostRedisplay();
 }
 
-*/
+
 void Teclado_Especial(unsigned char tecla, int x, int y){
 
     printf("Aqui");
@@ -197,7 +181,6 @@ void Teclado_Especial(unsigned char tecla, int x, int y){
     case GLUT_KEY_LEFT:
         if((selected == 1) && (bule.pos_x-1>=25)){
             bule.pos_x -= 1;
-            printf("Aqui -x");
             break;
         }
         if((selected == 2) && (bola.pos_x-1>=20)){
@@ -212,7 +195,6 @@ void Teclado_Especial(unsigned char tecla, int x, int y){
     case GLUT_KEY_RIGHT:
         if((selected == 1) && (bule.pos_x+1<=135)){
             bule.pos_x += 1;
-            printf("Aqui +x");
             break;
         }
         if((selected == 2) && (bola.pos_x+1<=130)){
@@ -265,11 +247,11 @@ void Mouse(int button, int state, int x, int y){
     case GLUT_DOWN:
         //Rotação em Z
         if(button == 3 && selected == 1){
-            bule.omega += 5;
+            bule.beta += 5;
             break;
         }
         if(button == 3 && selected == 2){
-            bola.omega += 5;
+            bola.beta += 5;
             break;
         }
         if(button == 3 && selected == 3){
@@ -277,11 +259,11 @@ void Mouse(int button, int state, int x, int y){
             break;
         }
         if(button == 4 && selected == 1){
-            bule.omega -= 5;
+            bule.beta -= 5;
             break;
         }
         if(button == 4 && selected == 2){
-            bola.omega -= 5;
+            bola.beta -= 5;
             break;
         }
         if(button == 4 && selected == 3){
@@ -305,6 +287,7 @@ int main(int argc, char** argv){
 
     glutSpecialFunc(Teclado_Especial);
     glutMouseFunc(Mouse);
+    glutKeyboardFunc(Teclado);
 
     init();
     glutDisplayFunc(display);
